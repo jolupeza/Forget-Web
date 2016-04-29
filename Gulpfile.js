@@ -65,11 +65,20 @@ gulp.task('wiredep', function(){
 // Comprime los archivos CSS y JS enlazados en el index.html
 //  y los minifica
 gulp.task('compress', function()  {
-  gulp.src('./app/index.html')
+  gulp.src('./app/**/*.html')
     .pipe(useref())
     .pipe(gulpif('*.js',  uglify({mangle: false })))
     .pipe(gulpif('*.css', cssnano()))
     .pipe(gulp.dest('./public'))
+})
+
+gulp.task('minify', function(){
+  gulp.src('./public/css/style.min.css')
+    .pipe(cssnano())
+    .pipe(gulp.dest('./public/css'))
+  gulp.src('./public/js/**/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('./public/js'))
 })
 
 // Elimina el CSS que no es utilizado para reducir el peso del archivo
@@ -100,11 +109,11 @@ gulp.task('watch', function(){
   gulp.watch(['./app/**/*.html', './public/**/*.html'], ['html'])
   gulp.watch(paths.compass, ['compass', 'inject'])
   gulp.watch(['./app/js/**/*.js'], ['jshint', 'inject'])
-  // gulp.watch(['./bower.json'], ['wiredep'])
+  gulp.watch(['./bower.json'], ['wiredep'])
 })
 
-gulp.task('default', ['inject', 'watch'])
+gulp.task('default', ['inject', 'wiredep', 'watch'])
 gulp.task('dev', ['watch'])
 gulp.task('bower', ['wiredep'])
 
-gulp.task('build', ['compress', 'copy', 'uncss'])
+gulp.task('build', ['compress', 'copy', 'uncss', 'minify'])
