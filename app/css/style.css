@@ -1,6 +1,6 @@
 /* --------------------------- *\ */
 /* --------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700);
 /* --------------------------- *\ */
 /* --------------------------- */
 /* --------------------------- *\ */
@@ -321,4 +321,36 @@ body {
     bottom: auto;
     position: relative;
   }
+}
+/* --------------------------- *\ */
+/* --------------------------- */
+.Modal-dialog {
+  margin-bottom: 0;
+  margin-top: 150px;
+}
+
+.Modal-content {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.Modal-body {
+  padding: 50px 15px;
+}
+.Modal-body p {
+  color: #004975;
+  font-weight: 700;
+}
+.Modal-body p::before {
+  background: transparent url("../images/face.png") center 0 no-repeat;
+  content: "";
+  display: block;
+  height: 76px;
+  margin: 0 auto 15px auto;
+  width: 76px;
+}
+.Modal-body p span {
+  display: block;
+  font-size: 1.25em;
 }
