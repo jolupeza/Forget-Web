@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Forget</title>
@@ -22,61 +22,92 @@
     <![endif]-->
 </head>
 <body>
-    <header class="Header">
-      <h1 class="Header-logo text-center">
-        <a href="index.html"><img src="images/logo-medium.png" alt="" class="img-responsive center-block" /></a>
-      </h1>
-    </header><!-- end Header -->
+  <header class="Header">
+    <h1 class="Header-logo text-center">
+      <a href="index.html"><img src="images/logo-medium.png" alt="" class="img-responsive center-block" /></a>
+    </h1>
+  </header><!-- end Header -->
 
-    <main class="Content Content-form">
-      <p class="text-center Text-resalt text-uppercase">Deja tus datos, y pregúntale a tus amigos que les gustaría recibir. ¡Ayúdanos a eliminar los malos regalos!</p>
+  <main class="Content Content-form">
+    <p class="text-center Text-resalt text-uppercase">Deja tus datos, y pregúntale a tus amigos que les gustaría recibir. ¡Ayúdanos a eliminar los malos regalos!</p>
 
-      <form action="" class="Form">
-        <div class="form-group">
-          <label for="name" class="sr-only">Nombre</label>
-          <input type="text" name="name" id="name" class="form-control Form-input" placeholder="Nombre" />
+    <form action="" class="Form">
+      <div class="form-group">
+        <label for="name" class="sr-only">Nombre</label>
+        <input type="text" name="name" id="name" class="form-control Form-input" placeholder="Nombre" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="sr-only">Correo</label>
+        <input type="email" name="email" id="email" class="form-control Form-input" placeholder="Correo" />
+      </div>
+      <div class="form-group">
+        <label for="tel" class="sr-only">Teléfono</label>
+        <input type="text" name="tel" id="tel" class="form-control Form-input" placeholder="Teléfono" />
+      </div>
+
+      <div class="text-center">
+        <input type="submit" class="Button Button-normal text-uppercase" value="Enviar" />
+      </div>
+    </form>
+
+    <hr class="Content-hr" />
+
+    <section class="Content-buttons">
+      <h3 class="text-uppercase Text-red text-center Content-subtitle">Elige por donde preguntarle a tu amigo(a)</h3>
+      <div class="text-center">
+
+        <a id="share-fb" class="Social Social-fb text-hide" href="http://www.facebook.com/sharer.php?u=http://watson.pe" rel="nofollow">Facebook</a>
+
+        <!-- <a id="share-fb" class="Social Social-fb text-hide" href="http://www.facebook.com/sharer.php?u=http://watson.pe" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=no,scrollbars=no,height=400,width=600'); return false;" rel="nofollow">Facebook</a> -->
+
+        <a href="" class="Social Social-twitter text-hide">Twitter</a>
+        <a href="" class="Social Social-whatsapp text-hide">Whatsapp</a>
+        <a href="" class="Social Social-email text-hide">Email</a>
+        <a href="" class="Social Social-phone text-hide">Phone</a>
+      </div>
+    </section><!-- end Content-buttons -->
+  </main><!-- end Content -->
+
+  <footer class="Footer">
+    <hr class="Footer-borderTop" />
+    <section class="container">
+      <p class="Footer-copy">Copyright&copy; 2016. Derechos Reservados por <a href="http://watson.pe" class="text-uppercase" target="_blank">Watson</a></p>
+    </section>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade Modal" id="md-message" tabindex="-1" role="dialog" aria-labelledby="md-message-label">
+    <div class="modal-dialog Modal-dialog" role="document">
+      <div class="modal-content Modal-content">
+        <!--<div class="modal-header Modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="md-message-label">Modal title</h4>
+        </div>-->
+        <div class="modal-body Modal-body">
+          <p class="text-center text-uppercase"><span>¡Muy pronto</span> habilitaremos esta opción!</p>
         </div>
-        <div class="form-group">
-          <label for="email" class="sr-only">Correo</label>
-          <input type="email" name="email" id="email" class="form-control Form-input" placeholder="Correo" />
-        </div>
-        <div class="form-group">
-          <label for="tel" class="sr-only">Teléfono</label>
-          <input type="text" name="tel" id="tel" class="form-control Form-input" placeholder="Teléfono" />
-        </div>
-      </form>
+        <!--<div class="modal-footer Modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>-->
+      </div>
+    </div>
+  </div>
 
-      <hr class="Content-hr" />
 
-      <section class="Content-buttons">
-        <h3 class="text-uppercase Text-red text-center Content-subtitle">Elige por donde preguntarle a tu amigo(a)</h3>
-        <div class="text-center">
-          <a href="" class="Social Social-fb text-hide">Facebook</a>
-          <a href="" class="Social Social-twitter text-hide">Twitter</a>
-          <a href="" class="Social Social-whatsapp text-hide">Whatsapp</a>
-          <a href="" class="Social Social-email text-hide">Email</a>
-          <a href="" class="Social Social-phone text-hide">Phone</a>
-        </div>
-      </section><!-- end Content-buttons -->
-    </main><!-- end Content -->
-
-    <footer class="Footer">
-      <hr class="Footer-borderTop" />
-      <section class="container">
-        <p class="Footer-copy">Copyright&copy; 2016. Derechos Reservados por <a href="http://watson.pe" class="text-uppercase" target="_blank">Watson</a></p>
-      </section>
-    </footer>
-
-    <!-- build:js js/vendor.min.js -->
-    <!-- bower:js -->
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:js js/app.min.js -->
-    <!-- inject:js -->
-    <script src="js/script.js"></script>
-    <!-- endinject -->
-    <!-- endbuild -->
+  <script>
+      _root_ = 'http://forget.web'
+  </script>
+  <!-- build:js js/vendor.min.js -->
+  <!-- bower:js -->
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:js js/app.min.js -->
+  <!-- inject:js -->
+  <script src="js/script.js"></script>
+  <!-- endinject -->
+  <!-- endbuild -->
 </body>
 </html>

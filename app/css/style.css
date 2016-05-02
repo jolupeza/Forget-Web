@@ -166,7 +166,7 @@ body {
 /* --------------------------- *\ */
 /* --------------------------- */
 .Form {
-  margin: 30px auto 50px auto;
+  margin: 30px auto 0 auto;
   width: 60%;
 }
 
@@ -259,9 +259,14 @@ body {
   -webkit-border-radius: 15px;
   border-radius: 15px;
   color: white;
+  display: inline-block;
   font-size: 1.125em;
   font-weight: 300;
   padding: 10px 15px;
+}
+.Button:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .Button-normal {
