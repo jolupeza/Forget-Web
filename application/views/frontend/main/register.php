@@ -1,31 +1,78 @@
 <main class="Content Content-form">
-    <p class="text-center Text-resalt text-uppercase">Deja tus datos, y pregúntale a tus amigos que les gustaría recibir. ¡Ayúdanos a eliminar los malos regalos!</p>
+  <p class="text-center Text-resalt text-uppercase">Deja tus datos, y pregúntale a tus amigos que les gustaría recibir. ¡Ayúdanos a eliminar los malos regalos!</p>
 
-    <form action="" class="Form">
-        <div class="form-group">
-            <label for="name" class="sr-only">Nombre</label>
-            <input type="text" name="name" id="name" class="form-control Form-input" placeholder="Nombre" />
-        </div>
-        <div class="form-group">
-            <label for="email" class="sr-only">Correo</label>
-            <input type="email" name="email" id="email" class="form-control Form-input" placeholder="Correo" />
-        </div>
-        <div class="form-group">
-            <label for="tel" class="sr-only">Teléfono</label>
-            <input type="text" name="tel" id="tel" class="form-control Form-input" placeholder="Teléfono" />
-        </div>
-    </form>
+  <?php if (validation_errors()) : ?>
+    <div class="alert alert-danger text-center" role="alert">
+      <?php echo validation_errors(); ?>
+    </div>
+  <?php endif; ?>
 
-    <hr class="Content-hr" />
+  <?php if ($this->session->flashdata('success')) : ?>
+    <div class="alert alert-success text-center" role="alert">
+      <p><?php echo $this->session->flashdata('success'); ?></p>
+    </div>
+  <?php endif; ?>
 
-    <section class="Content-buttons">
-        <h3 class="text-uppercase Text-red text-center Content-subtitle">Elige por donde preguntarle a tu amigo(a)</h3>
-        <div class="text-center">
-            <a id="share-fb" class="Social Social-fb text-hide" href="http://www.facebook.com/sharer.php?u=http://watson.pe" rel="nofollow">Facebook</a>
-            <a href="" class="Social Social-twitter text-hide">Twitter</a>
-            <a href="" class="Social Social-whatsapp text-hide">Whatsapp</a>
-            <a href="" class="Social Social-email text-hide">Email</a>
-            <a href="" class="Social Social-phone text-hide">Phone</a>
-        </div>
-    </section><!-- end Content-buttons -->
+  <?php echo form_open('', ['class' => 'Form']); ?>
+    <div class="form-group">
+      <label for="name" class="sr-only">Nombre</label>
+      <?php
+        $attrs = array(
+          'name' => 'name',
+          'id' => 'name',
+          'placeholder' => 'Nombre',
+          'class' => 'form-control Form-input',
+          'value' => set_value('name'),
+          'autocomplete' => 'off'
+        );
+      ?>
+      <?php echo form_input($attrs); ?>
+    </div>
+    <div class="form-group">
+      <label for="email" class="sr-only">Correo</label>
+      <?php
+        $attrs = array(
+          'name' => 'email',
+          'id' => 'email',
+          'placeholder' => 'Correo',
+          'class' => 'form-control Form-input',
+          'value' => set_value('email'),
+          'type' => 'email',
+          'autocomplete' => 'off'
+        );
+      ?>
+      <?php echo form_input($attrs); ?>
+    </div>
+    <div class="form-group">
+      <label for="tel" class="sr-only">Teléfono</label>
+      <?php
+        $attrs = array(
+          'name' => 'phone',
+          'id' => 'phone',
+          'placeholder' => 'Teléfono',
+          'class' => 'form-control Form-input',
+          'value' => set_value('phone'),
+          'autocomplete' => 'off'
+        );
+      ?>
+      <?php echo form_input($attrs); ?>
+    </div>
+
+    <div class="text-center">
+      <?php echo form_submit('submit', 'Registrar', 'class="Button Button-normal text-uppercase"'); ?>
+    </div>
+  <?php echo form_close(); ?>
+
+  <hr class="Content-hr" />
+
+  <section class="Content-buttons">
+    <h3 class="text-uppercase Text-red text-center Content-subtitle">Elige por donde preguntarle a tu amigo(a)</h3>
+    <div class="text-center">
+      <a id="share-fb" class="Social Social-fb text-hide" href="http://www.facebook.com/sharer.php?u=http://watson.pe" rel="nofollow">Facebook</a>
+      <a id="share-tw" href="http://twitter.com/share?text=Forget%20Watson&amp;url=http%3A%2F%2Fwatson.com%2F&amp;via=watson" class="Social Social-twitter text-hide" rel="nofollow">Twitter</a>
+      <a href="" class="Social Social-whatsapp text-hide">Whatsapp</a>
+      <a href="" class="Social Social-email text-hide">Email</a>
+      <a href="" class="Social Social-phone text-hide">Phone</a>
+    </div>
+  </section><!-- end Content-buttons -->
 </main><!-- end Content -->

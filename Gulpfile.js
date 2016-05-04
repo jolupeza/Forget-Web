@@ -68,19 +68,10 @@ gulp.task('wiredep', function(){
 gulp.task('compress', function()  {
   gulp.src('./app/**/*.html')
     .pipe(useref())
-    .pipe(gulpif('*.js',  uglify()))
+    // .pipe(gulpif('*.js',  uglify()))
     // .pipe(gulpif('*.js',  uglify({mangle: false })))
-    .pipe(gulpif('*.css', cssnano()))
+    // .pipe(gulpif('*.css', cssnano()))
     .pipe(gulp.dest('./public'))
-})
-
-gulp.task('minify', function(){
-  return gulp.src('./public/css/style.min.css')
-    .pipe(cssnano())
-    .pipe(gulp.dest('./public/css'))
-  //return gulp.src('./public/js/**/*.js')
-  //  .pipe(uglify())
-  //  .pipe(gulp.dest('./public/js'))
 })
 
 // Elimina el CSS que no es utilizado para reducir el peso del archivo
