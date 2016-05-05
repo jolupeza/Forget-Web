@@ -47,4 +47,27 @@ class Main extends Frontend_Controller
 		$this->data['subview'] = 'frontend/main/about';
 		$this->load->view('frontend/layout', $this->getData());
 	}
+
+	public function addClick()
+	{
+		$this->load->model('Link_model');
+
+		$method = $this->input->post('method');
+		$result = array('result' => true);
+
+		$success = $this->Link_model->updateClick($method);
+
+		if ($this->input->is_ajax_request()) {
+			$result['result'] = $success;
+			echo json_encode($result);
+			exit;
+//			$message = ($success) ? trans('admin.general.deleteok') : trans('admin.general.fail');
+
+//			return response()->json(compact('success', 'message'));
+		}
+
+//		($success) ? Session::flash('sucsess', trans('admin.general.actionok')) : Session::flash('danger', trans('admin.general.fail'));
+
+		return redirect('main/register');
+	}
 }

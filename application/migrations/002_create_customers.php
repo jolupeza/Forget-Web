@@ -42,6 +42,6 @@ class Migration_Create_customers extends CI_Migration
 
     public function down()
     {
-        $this->dbforge->drop_table('users');
+        $this->dbforge->drop_table('customers');
     }
 }

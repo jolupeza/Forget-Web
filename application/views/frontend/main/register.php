@@ -68,11 +68,11 @@
   <section class="Content-buttons">
     <h3 class="text-uppercase Text-red text-center Content-subtitle">Elige por donde preguntarle a tu amigo(a)</h3>
     <div class="text-center">
-      <a id="share-fb" class="Social Social-fb text-hide" href="http://www.facebook.com/sharer.php?u=http://watson.pe" rel="nofollow">Facebook</a>
-      <a id="share-tw" href="http://twitter.com/share?text=Forget%20Watson&amp;url=http%3A%2F%2Fwatson.com%2F&amp;via=watson" class="Social Social-twitter text-hide" rel="nofollow">Twitter</a>
-      <a href="" class="Social Social-whatsapp text-hide">Whatsapp</a>
-      <a href="" class="Social Social-email text-hide">Email</a>
-      <a href="" class="Social Social-phone text-hide">Phone</a>
+      <a data-method="facebook" class="Social Social-fb text-hide Sh-button" href="http://www.facebook.com/sharer.php?u=http://watson.pe" rel="nofollow">Facebook</a>
+      <a data-method="twitter" href="http://twitter.com/share?text=Forget%20Watson&amp;url=http%3A%2F%2Fwatson.com%2F&amp;via=watson" class="Social Social-twitter text-hide Sh-button" rel="nofollow">Twitter</a>
+      <a data-method="whatsapp" href="" class="Social Social-whatsapp text-hide Sh-button">Whatsapp</a>
+      <a data-method="email" href="" class="Social Social-email text-hide Sh-button">Email</a>
+      <a data-method="phone" href="" class="Social Social-phone text-hide Sh-button">Phone</a>
     </div>
   </section><!-- end Content-buttons -->
 </main><!-- end Content -->
