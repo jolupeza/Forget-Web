@@ -2,5 +2,7 @@
 /.sass-cache
 /node_modules
 /app/lib
+/app/videos
+/public/videos
 /.idea
 /vendor

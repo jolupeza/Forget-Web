@@ -146,6 +146,11 @@ body {
   .Content-form {
     width: 60%;
   }
+
+  .Content-video {
+    height: auto !important;
+    width: 100% !important;
+  }
 }
 @media only screen and (max-width: 767px) {
   .Content-home {

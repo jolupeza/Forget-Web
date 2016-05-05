@@ -1,5 +1,4 @@
 <?php
-
 date_default_timezone_set('America/Lima');
 
 /*
@@ -58,7 +57,8 @@ date_default_timezone_set('America/Lima');
  */
     $root = dirname(__FILE__);
     switch ($root) {
-        case '/home/jperez/web/forget-web/public':
+      case 'C:\wamp\www\forget-web\public':
+      // case '/home/jperez/web/forget-web/public':
             define('ENVIRONMENT', 'development');
             break;
         default:
