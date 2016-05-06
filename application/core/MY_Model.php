@@ -1,4 +1,8 @@
-<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
 
 class MY_Model extends CI_Model
 {
@@ -100,6 +104,7 @@ class MY_Model extends CI_Model
 
         $this->db->where($this->primaryKey, $id);
         $this->db->limit(1);
+
         return $this->db->delete($this->tableName);
     }
 

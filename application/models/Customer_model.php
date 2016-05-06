@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Customer_model extends MY_Model
 {
@@ -13,18 +14,18 @@ class Customer_model extends MY_Model
             'name' => array(
                 'field' => 'name',
                 'label' => 'Nombre',
-                'rules' => 'trim|required'
+                'rules' => 'trim|required',
             ),
             'email' => array(
                 'field' => 'email',
                 'label' => 'Correo',
-                'rules' => 'trim|required|valid_email|is_unique[customers.email]'
+                'rules' => 'trim|required|valid_email|is_unique[customers.email]',
             ),
             'phone' => array(
                 'field' => 'phone',
                 'label' => 'Teléfono',
-                'rules' => 'trim|required|integer|min_length[7]|max_length[9]'
-            )
+                'rules' => 'trim|required|integer|min_length[7]|max_length[9]',
+            ),
         );
     }
 

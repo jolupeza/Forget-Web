@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Migration_Create_sessions extends CI_Migration
 {
@@ -8,21 +9,21 @@ class Migration_Create_sessions extends CI_Migration
         $this->dbforge->add_field([
             'id' => [
                 'type' => 'VARCHAR',
-                'constraint' => 40
+                'constraint' => 40,
             ],
             'ip_address' => [
                 'type' => 'VARCHAR',
-                'constraint' => 45
+                'constraint' => 45,
             ],
             'timestamp' => [
                 'type' => 'INT',
                 'constraint' => 10,
                 'unsigned' => true,
-                'default' => 0
+                'default' => 0,
             ],
             'data' => [
-                'type' => 'BLOB'
-            ]
+                'type' => 'BLOB',
+            ],
         ]);
 
         $this->dbforge->add_key('id', true);

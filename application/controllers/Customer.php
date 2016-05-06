@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Customer extends Frontend_Controller
 {
@@ -21,11 +22,11 @@ class Customer extends Frontend_Controller
     {
         $this->Customer_model->truncate();
 
-        for ($i = 0; $i < 51; $i++) {
+        for ($i = 0; $i < 51; ++$i) {
             $data = [
                 'name' => $this->faker->name,
                 'email' => $this->faker->unique()->email,
-                'phone' => $this->faker->randomNumber(9)
+                'phone' => $this->faker->randomNumber(9),
             ];
 
             $this->Customer_model->save($data);

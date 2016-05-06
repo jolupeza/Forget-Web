@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Link_model extends MY_Model
 {
@@ -37,6 +38,7 @@ class Link_model extends MY_Model
     {
         $this->db->set('click', 'click+1', false);
         $this->db->where('method', $method);
+
         return $this->db->update($this->tableName);
     }
 }

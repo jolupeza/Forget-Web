@@ -1,5 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+
+defined('BASEPATH') or exit('No direct script access allowed');
 
 class Link extends Frontend_Controller
 {
@@ -18,13 +19,13 @@ class Link extends Frontend_Controller
             'twitter',
             'whatsapp',
             'email',
-            'phone'
+            'phone',
         ];
 
         foreach ($methods as $method) {
             $data = [
                 'method' => $method,
-                'click' => 0
+                'click' => 0,
             ];
 
             $this->Link_model->save($data);
